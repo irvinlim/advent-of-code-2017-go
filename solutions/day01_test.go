@@ -13,5 +13,6 @@ var testcases = []types.TestCase{
 }
 
 func TestDay01(t *testing.T) {
-	RunTest(t, Day01, testcases)
+	RunTestCases(t, Day01, testcases)
+	RunInputFileTest(t, Day01, "input01", "1049")
 }
