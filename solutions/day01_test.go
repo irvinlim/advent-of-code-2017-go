@@ -13,11 +13,5 @@ var testcases = []types.TestCase{
 }
 
 func TestDay01(t *testing.T) {
-	for _, testcase := range testcases {
-		actual := Day01(testcase.Input)
-
-		if actual != testcase.Expected {
-			t.Errorf("Input %s: Expected %s, got %s instead", testcase.Input, testcase.Expected, actual)
-		}
-	}
+	RunTest(t, Day01, testcases)
 }
