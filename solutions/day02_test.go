@@ -13,3 +13,12 @@ func TestDay02PartOne(t *testing.T) {
 	RunTestCases(t, Day02PartOne, tests)
 	RunInputFileTest(t, Day02PartOne, "input02", "44670")
 }
+
+func TestDay02PartTwo(t *testing.T) {
+	var tests = []types.TestCase{
+		{Input: "5 9 2 8\n9 4 7 3\n3 8 6 5", Expected: "9"},
+	}
+
+	RunTestCases(t, Day02PartTwo, tests)
+	RunInputFileTest(t, Day02PartTwo, "input02", "285")
+}

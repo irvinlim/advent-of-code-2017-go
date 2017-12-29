@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// Day02PartOne Corruption Checksum
+// Day02PartOne Corruption Checksum (Part One)
 // http://adventofcode.com/2017/day/2
 func Day02PartOne(input string) string {
 	spreadsheet := parseSpreadsheet(input)
@@ -26,6 +26,25 @@ func Day02PartOne(input string) string {
 	}
 
 	return fmt.Sprintf("%d", checksum)
+}
+
+// Day02PartTwo Corruption Checksum (Part Two)
+// http://adventofcode.com/2017/day/2
+func Day02PartTwo(input string) string {
+	spreadsheet := parseSpreadsheet(input)
+	sum := 0
+
+	for _, row := range spreadsheet {
+		for _, x := range row {
+			for _, y := range row {
+				if x > y && x%y == 0 {
+					sum += x / y
+				}
+			}
+		}
+	}
+
+	return fmt.Sprintf("%d", sum)
 }
 
 func parseSpreadsheet(input string) [][]int {
